@@ -1,0 +1,191 @@
+{
+  "name": "tauren",
+  "draft": true,
+  "_comment": "Stock race 6 (ChrModel 11/12). NEEDS apply_config_keys.py. Hair style = Horn Style (retail type 24); hair colour = Horn Color, whose choices are tied to horn styles (sets). Fur is the skin extra (target 2 -> type 8). Female jewelry (type 20 on mane, earrings) baked from Jewelry Color (one choice, no loss). Dropped: face/body paint, headdress, flower, male nose ring and necklace, female nose ring and necklace. The 4 NPC-only horn styles become selectable (hair-style rows carry no NPC flag).",
+  "race_id": 6,
+  "export_folder": "character/tauren",
+  "out_folder": "Character\\Tauren",
+  "race_cap": "Tauren",
+  "disk_folders": {
+    "Character\\Tauren\\Male": "Character/Tauren/Male",
+    "Character\\Tauren\\Female": "Character/Tauren/Female"
+  },
+  "sexes": {
+    "male": {
+      "sex": 0,
+      "chr_model": 11,
+      "model": "taurenmale_hd",
+      "out_model": "taurenmale",
+      "model_cap": "TaurenMale",
+      "folder_cap": "Male",
+      "slots": {
+        "facial": {
+          "none_label": "Clean",
+          "options": [
+            {
+              "option": "Facial Hair",
+              "geoset_type": 1,
+              "group": 1,
+              "shift": 1,
+              "label": "{}",
+              "omit_label": "Clean"
+            },
+            {
+              "option": "Hair",
+              "geoset_type": 2,
+              "group": 2,
+              "shift": 1,
+              "label": "{} mane",
+              "omit_label": "Mane"
+            }
+          ]
+        }
+      }
+    },
+    "female": {
+      "sex": 1,
+      "chr_model": 12,
+      "model": "taurenfemale_hd",
+      "out_model": "taurenfemale",
+      "model_cap": "TaurenFemale",
+      "folder_cap": "Female",
+      "slots": {
+        "facial": {
+          "none_label": "Mane",
+          "options": [
+            {
+              "option": "Hair",
+              "geoset_type": 2,
+              "group": 2,
+              "shift": 1,
+              "label": "{} mane",
+              "omit_label": "Mane"
+            },
+            {
+              "option": "Earrings",
+              "geoset_type": 35,
+              "group": 1,
+              "shift": 1,
+              "label": "{} earrings",
+              "omit_label": "None"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "choice_filter": {
+    "_comment": "Order: normal, then DK-only, then NPC-only (flag 8). Requirement type 2 = NPC-only; type 4 = 'Transmog' specials, dropped.",
+    "npc_req_types": [
+      2
+    ],
+    "drop_req_types": [
+      4
+    ],
+    "dk_last": true,
+    "npc_last": true
+  },
+  "geosets": {
+    "_comment": "From inspections/tauren.txt. Head 3202 on and 3201 (neck stub) off, upper chest 2201, eyes 3301 and 5101 always on, DK eye glow 1701 -> 1703: no option drives these groups, same as worgen (verified in-game). No 20xx feet (hooves). Horns 24xx move into hair group 0 with +1, so horn 'None' (value 0) becomes 1, which has no mesh. Foremane meshes 1-4 fixed to Natural (retail 3, always on); the others dropped.",
+    "keep_groups": [
+      0,
+      4,
+      5,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      15,
+      18
+    ],
+    "shift": {
+      "0": 1,
+      "1": 1,
+      "2": 1
+    },
+    "map": {
+      "1701": [
+        1703
+      ],
+      "2201": [
+        0
+      ],
+      "3202": [
+        0
+      ],
+      "3301": [
+        0
+      ],
+      "5101": [
+        0
+      ],
+      "1": [],
+      "2": [],
+      "3": [
+        0
+      ],
+      "4": []
+    },
+    "remap_groups": {
+      "24": 0,
+      "35": 1
+    }
+  },
+  "bald": {
+    "geoset": 0,
+    "showscalp": 1
+  },
+  "texture_types": {
+    "6": 6
+  },
+  "fixed_textures": {
+    "19": {
+      "option": "Eye Color",
+      "choice": 0,
+      "target": 25,
+      "name": "Eyes"
+    },
+    "20": {
+      "option": "Jewelry Color",
+      "choice": 0,
+      "target": 38,
+      "name": "Jewelry"
+    }
+  },
+  "slots": {
+    "skin": {
+      "option": "Skin Color",
+      "base": 1,
+      "underwear": [
+        13,
+        14
+      ],
+      "extra": 2
+    },
+    "face": {
+      "option": "Face",
+      "target": 5
+    },
+    "hair_style": {
+      "option": "Horn Style",
+      "geoset_type": 24,
+      "shift": 1
+    },
+    "hair_color": {
+      "mode": "hair",
+      "option": "Horn Color",
+      "sets": true,
+      "hair_target": 10,
+      "scalp_targets": [
+        11,
+        12
+      ]
+    },
+    "facial": {
+      "options": []
+    }
+  }
+}

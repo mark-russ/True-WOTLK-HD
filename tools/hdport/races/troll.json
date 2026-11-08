@@ -1,0 +1,194 @@
+{
+  "name": "troll",
+  "draft": true,
+  "_comment": "Stock race 8 (ChrModel 15/16; bones inline, no .skel). Facial = tusks x earrings x piercing for both sexes. Dropped: face paint and body paint.",
+  "race_id": 8,
+  "export_folder": "character/troll",
+  "out_folder": "Character\\Troll",
+  "race_cap": "Troll",
+  "disk_folders": {
+    "Character\\Troll\\Male": "Character/Troll/Male",
+    "Character\\Troll\\Female": "Character/Troll/Female"
+  },
+  "sexes": {
+    "male": {
+      "sex": 0,
+      "chr_model": 15,
+      "model": "trollmale_hd",
+      "out_model": "trollmale",
+      "model_cap": "TrollMale",
+      "folder_cap": "Male",
+      "slots": {
+        "facial": {
+          "none_label": "Tusked",
+          "options": [
+            {
+              "option": "Tusks",
+              "geoset_type": 40,
+              "group": 1,
+              "shift": 1,
+              "label": "{} tusks"
+            },
+            {
+              "option": "Earrings",
+              "geoset_type": 35,
+              "group": 2,
+              "shift": 1,
+              "label": "{} earrings",
+              "omit_label": "None"
+            },
+            {
+              "option": "Piercing",
+              "geoset_type": 16,
+              "group": 3,
+              "shift": 1,
+              "label": "{} piercing",
+              "omit_label": "None"
+            }
+          ]
+        }
+      }
+    },
+    "female": {
+      "sex": 1,
+      "chr_model": 16,
+      "model": "trollfemale_hd",
+      "out_model": "trollfemale",
+      "model_cap": "TrollFemale",
+      "folder_cap": "Female",
+      "slots": {
+        "facial": {
+          "none_label": "Nibblers",
+          "options": [
+            {
+              "option": "Tusks",
+              "geoset_type": 40,
+              "group": 1,
+              "shift": 1,
+              "label": "{} tusks"
+            },
+            {
+              "option": "Earrings",
+              "geoset_type": 35,
+              "group": 2,
+              "shift": 1,
+              "label": "{} earrings",
+              "omit_label": "None"
+            },
+            {
+              "option": "Piercing",
+              "geoset_type": 16,
+              "group": 3,
+              "shift": 1,
+              "label": "{} piercing",
+              "omit_label": "None"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "choice_filter": {
+    "_comment": "Order: normal, then DK-only, then NPC-only (flag 8). Requirement type 2 = NPC-only; type 4 = 'Transmog' specials, dropped.",
+    "npc_req_types": [
+      2
+    ],
+    "drop_req_types": [
+      4
+    ],
+    "dk_last": true,
+    "npc_last": true
+  },
+  "geosets": {
+    "_comment": "From inspections/troll.txt. Head 3202 on and 3201 (neck stub) off, upper chest 2201, eyes 3301 and 5101 always on, DK eye glow 1701 -> 1703: no option drives these groups, same as worgen (verified in-game). No 20xx feet in either model. Tusks 40xx -> 1xx, earrings 35xx -> 2xx, piercing 16xx -> 3xx. Female 202 (no option drives group 2) dropped so it can't collide with the moved earrings.",
+    "keep_groups": [
+      0,
+      4,
+      5,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      15,
+      18
+    ],
+    "shift": {
+      "1": 1,
+      "2": 1,
+      "3": 1
+    },
+    "map": {
+      "1701": [
+        1703
+      ],
+      "2201": [
+        0
+      ],
+      "3202": [
+        0
+      ],
+      "3301": [
+        0
+      ],
+      "5101": [
+        0
+      ],
+      "202": []
+    },
+    "remap_groups": {
+      "40": 1,
+      "35": 2,
+      "16": 3
+    }
+  },
+  "bald": {
+    "geoset": 0,
+    "showscalp": 1
+  },
+  "texture_types": {
+    "6": 6
+  },
+  "fixed_textures": {
+    "19": {
+      "option": "Eye Color",
+      "choice": 0,
+      "target": 25,
+      "name": "Eyes"
+    }
+  },
+  "slots": {
+    "skin": {
+      "option": "Skin Color",
+      "base": 1,
+      "underwear": [
+        13,
+        14
+      ]
+    },
+    "face": {
+      "option": "Face",
+      "target": 5
+    },
+    "hair_style": {
+      "option": "Hair Style"
+    },
+    "hair_color": {
+      "mode": "hair",
+      "option": "Hair Color",
+      "hair_target": 10,
+      "scalp_targets": [
+        11,
+        12
+      ]
+    },
+    "facial": {
+      "options": []
+    }
+  },
+  "hair_geoset_remap": {
+    "1": 99
+  }
+}

@@ -1,0 +1,192 @@
+{
+  "name": "goblin",
+  "draft": true,
+  "_comment": "Race 9 (mod-worgoblin), ChrModel 17/18. The retail models are goblinmale.m2 / goblinfemale.m2 (no _hd); the female has bones inline. Facial = earrings x nose ring. Jewelry (type 20, also on two female hair styles) baked from Jewelry Color choice 0, so 7 metal colours are lost. Female face texture target 4 (per hair colour) not used.",
+  "race_id": 9,
+  "export_folder": "character/goblin",
+  "out_folder": "Character\\Goblin",
+  "race_cap": "Goblin",
+  "disk_folders": {
+    "Character\\Goblin\\Male": "Character/Goblin/Male",
+    "Character\\Goblin\\Female": "Character/Goblin/Female"
+  },
+  "sexes": {
+    "male": {
+      "sex": 0,
+      "chr_model": 17,
+      "model": "goblinmale",
+      "out_model": "goblinmale",
+      "model_cap": "GoblinMale",
+      "folder_cap": "Male",
+      "slots": {
+        "facial": {
+          "none_label": "None",
+          "options": [
+            {
+              "option": "Earrings",
+              "geoset_type": 35,
+              "group": 1,
+              "shift": 1,
+              "label": "{} earrings",
+              "omit_label": "None"
+            },
+            {
+              "option": "Nose Ring",
+              "geoset_type": 16,
+              "group": 3,
+              "shift": 1,
+              "label": "{} nose ring",
+              "omit_label": "None"
+            }
+          ]
+        }
+      }
+    },
+    "female": {
+      "sex": 1,
+      "chr_model": 18,
+      "model": "goblinfemale",
+      "out_model": "goblinfemale",
+      "model_cap": "GoblinFemale",
+      "folder_cap": "Female",
+      "slots": {
+        "facial": {
+          "none_label": "None",
+          "options": [
+            {
+              "option": "Earrings",
+              "geoset_type": 35,
+              "group": 1,
+              "shift": 1,
+              "label": "{} earrings",
+              "omit_label": "None"
+            },
+            {
+              "option": "Nose Ring",
+              "geoset_type": 16,
+              "group": 3,
+              "shift": 1,
+              "label": "{} nose ring",
+              "omit_label": "None"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "choice_filter": {
+    "_comment": "Order: normal, then DK-only, then NPC-only (flag 8). Requirement type 2 = NPC-only; type 4 = 'Transmog' specials, dropped.",
+    "npc_req_types": [
+      2
+    ],
+    "drop_req_types": [
+      4
+    ],
+    "dk_last": true,
+    "npc_last": true
+  },
+  "geosets": {
+    "_comment": "From inspections/goblin.txt. Head 3202 on and 3201 (neck stub) off, upper chest 2201, eyes 3301 and 5101 always on, DK eye glow 1701 -> 1703: no option drives these groups, same as worgen (verified in-game). Bare feet 2001 always on (copies inside the boot geosets vanished under robes, which hide group 5; full-foot boots 505 may show toes through); toe pieces 2002-2008 dropped. Chin (40xx) and nose (41xx) fixed to the first choice (4001, 4101). Ears: 3.3.5a shows 702, the first retail choice (Sharp).",
+    "keep_groups": [
+      0,
+      4,
+      5,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      15,
+      18
+    ],
+    "shift": {
+      "1": 1,
+      "3": 1
+    },
+    "map": {
+      "1701": [
+        1703
+      ],
+      "2201": [
+        0
+      ],
+      "3202": [
+        0
+      ],
+      "3301": [
+        0
+      ],
+      "5101": [
+        0
+      ],
+      "2001": [
+        0
+      ],
+      "4001": [
+        0
+      ],
+      "4101": [
+        0
+      ]
+    },
+    "remap_groups": {
+      "35": 1,
+      "16": 3
+    }
+  },
+  "bald": {
+    "geoset": 0,
+    "showscalp": 1
+  },
+  "texture_types": {
+    "6": 6
+  },
+  "fixed_textures": {
+    "19": {
+      "option": "Eye Color",
+      "choice": 0,
+      "target": 25,
+      "name": "Eyes"
+    },
+    "20": {
+      "option": "Jewelry Color",
+      "choice": 0,
+      "target": 38,
+      "name": "Jewelry"
+    }
+  },
+  "slots": {
+    "skin": {
+      "option": "Skin Color",
+      "base": 1,
+      "underwear": [
+        13,
+        14
+      ]
+    },
+    "face": {
+      "option": "Face",
+      "target": 5
+    },
+    "hair_style": {
+      "option": "Hair Style"
+    },
+    "hair_color": {
+      "mode": "hair",
+      "option": "Hair Color",
+      "hair_target": 10,
+      "scalp_targets": [
+        11,
+        12
+      ]
+    },
+    "facial": {
+      "options": []
+    }
+  },
+  "hair_geoset_remap": {
+    "1": 99
+  }
+}

@@ -1,0 +1,184 @@
+{
+  "name": "dwarf",
+  "draft": true,
+  "_comment": "Stock race 3 (ChrModel 5/6). Retail has 10 DK-only faces per sex. Male beard has no 'None' (always bearded). Dropped: tattoos, male earrings and nose ring. Female facial = earrings x nose piercing.",
+  "race_id": 3,
+  "export_folder": "character/dwarf",
+  "out_folder": "Character\\Dwarf",
+  "race_cap": "Dwarf",
+  "disk_folders": {
+    "Character\\Dwarf\\Male": "Character/Dwarf/Male",
+    "Character\\Dwarf\\Female": "Character/Dwarf/Female"
+  },
+  "sexes": {
+    "male": {
+      "sex": 0,
+      "chr_model": 5,
+      "model": "dwarfmale_hd",
+      "out_model": "dwarfmale",
+      "model_cap": "DwarfMale",
+      "folder_cap": "Male",
+      "slots": {
+        "facial": {
+          "none_label": "Full beard",
+          "options": [
+            {
+              "option": "Beard",
+              "geoset_type": 1,
+              "group": 1,
+              "shift": 1,
+              "label": "{} beard"
+            },
+            {
+              "option": "Mustache",
+              "geoset_type": 3,
+              "group": 3,
+              "shift": 1,
+              "label": "{} mustache",
+              "omit_label": "None"
+            }
+          ]
+        }
+      }
+    },
+    "female": {
+      "sex": 1,
+      "chr_model": 6,
+      "model": "dwarffemale_hd",
+      "out_model": "dwarffemale",
+      "model_cap": "DwarfFemale",
+      "folder_cap": "Female",
+      "slots": {
+        "facial": {
+          "none_label": "None",
+          "options": [
+            {
+              "option": "Earrings",
+              "geoset_type": 35,
+              "group": 1,
+              "shift": 1,
+              "label": "{} earrings",
+              "omit_label": "None"
+            },
+            {
+              "option": "Piercings",
+              "geoset_type": 16,
+              "group": 3,
+              "shift": 1,
+              "label": "{}",
+              "omit_label": "None"
+            }
+          ]
+        }
+      },
+      "geosets": {
+        "remap_groups": {
+          "35": 1,
+          "16": 3
+        }
+      }
+    }
+  },
+  "choice_filter": {
+    "_comment": "Order: normal, then DK-only, then NPC-only (flag 8). Requirement type 2 = NPC-only; type 4 = 'Transmog' specials, dropped.",
+    "npc_req_types": [
+      2
+    ],
+    "drop_req_types": [
+      4
+    ],
+    "dk_last": true,
+    "npc_last": true
+  },
+  "geosets": {
+    "_comment": "From inspections/dwarf.txt. Head 3202 on and 3201 (neck stub) off, upper chest 2201, eyes 3301 and 5101 always on, DK eye glow 1701 -> 1703: no option drives these groups, same as worgen (verified in-game). Bare feet 2001 always on (copies inside the boot geosets vanished under robes, which hide group 5; full-foot boots 505 may show toes through); toe pieces 2002-2008 dropped. Male eyebrow mesh 3401 (the only choice) always on. Male 35xx/16xx dropped; the female remap (35->1, 16->3) is per sex so it can't land on the male beard / mustache groups.",
+    "keep_groups": [
+      0,
+      4,
+      5,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      15,
+      18
+    ],
+    "shift": {
+      "1": 1,
+      "3": 1
+    },
+    "map": {
+      "1701": [
+        1703
+      ],
+      "2201": [
+        0
+      ],
+      "3202": [
+        0
+      ],
+      "3301": [
+        0
+      ],
+      "5101": [
+        0
+      ],
+      "2001": [
+        0
+      ],
+      "3401": [
+        0
+      ]
+    }
+  },
+  "bald": {
+    "geoset": 0,
+    "showscalp": 1
+  },
+  "texture_types": {
+    "6": 6
+  },
+  "fixed_textures": {
+    "19": {
+      "option": "Eye Color",
+      "choice": 0,
+      "target": 25,
+      "name": "Eyes"
+    }
+  },
+  "slots": {
+    "skin": {
+      "option": "Skin Color",
+      "base": 1,
+      "underwear": [
+        13,
+        14
+      ]
+    },
+    "face": {
+      "option": "Face",
+      "target": 5
+    },
+    "hair_style": {
+      "option": "Hair Style"
+    },
+    "hair_color": {
+      "mode": "hair",
+      "option": "Hair Color",
+      "hair_target": 10,
+      "scalp_targets": [
+        11,
+        12
+      ]
+    },
+    "facial": {
+      "options": []
+    }
+  },
+  "hair_geoset_remap": {
+    "1": 99
+  }
+}

@@ -1,0 +1,196 @@
+{
+  "name": "orc",
+  "draft": true,
+  "_comment": "Stock race 2 (ChrModel 3/4). Retail has 9 DK-only faces per sex, so no dk_copies. Dropped (no 3.3.5a slot): scars, grime, tattoo, war paint, male earrings and nose ring, Upright/Hunched. Female facial = earrings x nose ring x necklace.",
+  "race_id": 2,
+  "export_folder": "character/orc",
+  "out_folder": "Character\\Orc",
+  "race_cap": "Orc",
+  "disk_folders": {
+    "Character\\Orc\\Male": "Character/Orc/Male",
+    "Character\\Orc\\Female": "Character/Orc/Female"
+  },
+  "sexes": {
+    "male": {
+      "sex": 0,
+      "chr_model": 3,
+      "model": "orcmale_hd",
+      "out_model": "orcmale",
+      "model_cap": "OrcMale",
+      "folder_cap": "Male",
+      "slots": {
+        "facial": {
+          "none_label": "Clean shaven",
+          "options": [
+            {
+              "option": "Beard",
+              "geoset_type": 1,
+              "group": 1,
+              "shift": 1,
+              "label": "{} beard",
+              "omit_label": "None",
+              "texture_target": 8
+            },
+            {
+              "option": "Sideburns",
+              "geoset_type": 2,
+              "group": 2,
+              "shift": 1,
+              "label": "{} sideburns",
+              "omit_label": "None"
+            }
+          ]
+        }
+      }
+    },
+    "female": {
+      "sex": 1,
+      "chr_model": 4,
+      "model": "orcfemale_hd",
+      "out_model": "orcfemale",
+      "model_cap": "OrcFemale",
+      "folder_cap": "Female",
+      "slots": {
+        "facial": {
+          "none_label": "None",
+          "options": [
+            {
+              "option": "Earrings",
+              "geoset_type": 35,
+              "group": 1,
+              "shift": 1,
+              "label": "{} earrings",
+              "omit_label": "None"
+            },
+            {
+              "option": "Nose Ring",
+              "geoset_type": 16,
+              "group": 2,
+              "shift": 1,
+              "label": "{} nose ring",
+              "omit_label": "None"
+            },
+            {
+              "option": "Necklace",
+              "geoset_type": 36,
+              "group": 3,
+              "shift": 1,
+              "label": "{} necklace",
+              "omit_label": "None"
+            }
+          ]
+        }
+      },
+      "geosets": {
+        "remap_groups": {
+          "35": 1,
+          "16": 2,
+          "36": 3
+        }
+      }
+    }
+  },
+  "choice_filter": {
+    "_comment": "Order: normal, then DK-only, then NPC-only (flag 8). Requirement type 2 = NPC-only; type 4 = 'Transmog' specials, dropped.",
+    "npc_req_types": [
+      2
+    ],
+    "drop_req_types": [
+      4
+    ],
+    "dk_last": true,
+    "npc_last": true
+  },
+  "geosets": {
+    "_comment": "From inspections/orc.txt. Head 3202 on and 3201 (neck stub) off, upper chest 2201, eyes 3301 and 5101 always on, DK eye glow 1701 -> 1703: no option drives these groups, same as worgen (verified in-game). Bare feet 2001 always on (copies inside the boot geosets vanished under robes, which hide group 5; full-foot boots 505 may show toes through); toe pieces 2002-2008 dropped. Male tusks fixed to Natural (4001). Male 35xx earrings / 16xx nose rings dropped; the female remap (35->1, 16->2, 36->3) is per sex so they can't land on the male beard (1xx) and sideburn (2xx) groups.",
+    "keep_groups": [
+      0,
+      4,
+      5,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      15,
+      18
+    ],
+    "shift": {
+      "1": 1,
+      "2": 1,
+      "3": 1
+    },
+    "map": {
+      "1701": [
+        1703
+      ],
+      "2201": [
+        0
+      ],
+      "3202": [
+        0
+      ],
+      "3301": [
+        0
+      ],
+      "5101": [
+        0
+      ],
+      "2001": [
+        0
+      ],
+      "4001": [
+        0
+      ]
+    }
+  },
+  "bald": {
+    "geoset": 0,
+    "showscalp": 1
+  },
+  "texture_types": {
+    "6": 6
+  },
+  "fixed_textures": {
+    "19": {
+      "option": "Eye Color",
+      "choice": 0,
+      "target": 25,
+      "name": "Eyes"
+    }
+  },
+  "slots": {
+    "skin": {
+      "option": "Skin Color",
+      "base": 1,
+      "underwear": [
+        13,
+        14
+      ]
+    },
+    "face": {
+      "option": "Face",
+      "target": 5
+    },
+    "hair_style": {
+      "option": "Hair Style"
+    },
+    "hair_color": {
+      "mode": "hair",
+      "option": "Hair Color",
+      "hair_target": 10,
+      "scalp_targets": [
+        11,
+        12
+      ]
+    },
+    "facial": {
+      "options": []
+    }
+  },
+  "hair_geoset_remap": {
+    "1": 99
+  }
+}

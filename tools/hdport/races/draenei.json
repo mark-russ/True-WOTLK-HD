@@ -1,0 +1,197 @@
+{
+  "name": "draenei",
+  "draft": true,
+  "_comment": "Stock race 11 (ChrModel 21/22). Face textures are target 4, not 5. Male skin extra (target 2 -> type 8). Jewelry (type 20, on hair, tendrils and tails) baked from Jewelry Color choice 0, so the other metal colours are lost. Facial: male facial hair x tendrils; female tendrils x horns. Dropped: circlet, horn/hair decorations. Female tail (3805) draws only from the body texture's lower-left corner, which 3.3.5a uses for the face: with island_extra it is drawn from the skin extra texture instead, at full resolution. The male's corner is shared with his main body mesh and his extra slot is taken, so his corner pieces are packed into the face area.",
+  "race_id": 11,
+  "export_folder": "character/draenei",
+  "out_folder": "Character\\Draenei",
+  "race_cap": "Draenei",
+  "disk_folders": {
+    "Character\\Draenei\\Male": "Character/Draenei/Male",
+    "Character\\Draenei\\Female": "Character/Draenei/Female"
+  },
+  "sexes": {
+    "male": {
+      "sex": 0,
+      "chr_model": 21,
+      "model": "draeneimale_hd",
+      "out_model": "draeneimale",
+      "model_cap": "DraeneiMale",
+      "folder_cap": "Male",
+      "slots": {
+        "facial": {
+          "none_label": "Bare",
+          "options": [
+            {
+              "option": "Facial Hair",
+              "geoset_type": 1,
+              "group": 1,
+              "shift": 1,
+              "label": "{}",
+              "omit_label": "Bare"
+            },
+            {
+              "option": "Tendrils",
+              "geoset_type": 2,
+              "group": 2,
+              "shift": 1,
+              "label": "{} tendrils",
+              "omit_label": "None"
+            }
+          ]
+        }
+      },
+      "geosets": {
+        "map": {
+          "3802": [
+            0
+          ]
+        }
+      }
+    },
+    "female": {
+      "sex": 1,
+      "chr_model": 22,
+      "model": "draeneifemale_hd",
+      "out_model": "draeneifemale",
+      "model_cap": "DraeneiFemale",
+      "folder_cap": "Female",
+      "slots": {
+        "facial": {
+          "none_label": "Thin tendrils",
+          "options": [
+            {
+              "option": "Tendrils",
+              "geoset_type": 2,
+              "group": 2,
+              "shift": 1,
+              "label": "{} tendrils"
+            },
+            {
+              "option": "Horns",
+              "geoset_type": 24,
+              "group": 3,
+              "shift": 1,
+              "label": "{} horns"
+            }
+          ]
+        }
+      },
+      "geosets": {
+        "map": {
+          "3805": [
+            0
+          ]
+        }
+      },
+      "island_extra": true
+    }
+  },
+  "choice_filter": {
+    "_comment": "Order: normal, then DK-only, then NPC-only (flag 8). Requirement type 2 = NPC-only; type 4 = 'Transmog' specials, dropped.",
+    "npc_req_types": [
+      2
+    ],
+    "drop_req_types": [
+      4
+    ],
+    "dk_last": true,
+    "npc_last": true
+  },
+  "geosets": {
+    "_comment": "From inspections/draenei.txt. Head 3202 on and 3201 (neck stub) off, upper chest 2201, eyes 3301 and 5101 always on, DK eye glow 1701 -> 1703: no option drives these groups, same as worgen (verified in-game). No 20xx feet. Tails fixed to Long (male 3802, female 3805). Female horns 24xx -> 3xx (values 2-13; 2401 is never chosen in retail).",
+    "keep_groups": [
+      0,
+      4,
+      5,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      15,
+      18
+    ],
+    "shift": {
+      "1": 1,
+      "2": 1,
+      "3": 1
+    },
+    "map": {
+      "1701": [
+        1703
+      ],
+      "2201": [
+        0
+      ],
+      "3202": [
+        0
+      ],
+      "3301": [
+        0
+      ],
+      "5101": [
+        0
+      ]
+    },
+    "remap_groups": {
+      "24": 3
+    }
+  },
+  "bald": {
+    "geoset": 0,
+    "showscalp": 1
+  },
+  "texture_types": {
+    "6": 6
+  },
+  "fixed_textures": {
+    "19": {
+      "option": "Eye Color",
+      "choice": 0,
+      "target": 25,
+      "name": "Eyes"
+    },
+    "20": {
+      "option": "Jewelry Color",
+      "choice": 0,
+      "target": 38,
+      "name": "Jewelry"
+    }
+  },
+  "slots": {
+    "skin": {
+      "option": "Skin Color",
+      "base": 1,
+      "underwear": [
+        13,
+        14
+      ],
+      "extra": 2
+    },
+    "face": {
+      "option": "Face",
+      "target": 4
+    },
+    "hair_style": {
+      "option": "Hair Style"
+    },
+    "hair_color": {
+      "mode": "hair",
+      "option": "Hair Color",
+      "hair_target": 10,
+      "scalp_targets": [
+        11,
+        12
+      ]
+    },
+    "facial": {
+      "options": []
+    }
+  },
+  "hair_geoset_remap": {
+    "1": 99
+  }
+}

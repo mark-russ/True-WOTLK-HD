@@ -1,0 +1,62 @@
+{
+  "name": "worgen",
+  "_comment": "mod-worgoblin puts worgen on race 12. Reproduces the HD worgen patch exactly (regression test).",
+  "race_id": 12,
+  "export_folder": "character/worgen",
+  "out_folder": "Character\\Worgen",
+  "race_cap": "Worgen",
+  "disk_folders": {
+    "Character\\Worgen\\Male": "Character/Worgen/male",
+    "Character\\Worgen\\Female": "Character/Worgen/female"
+  },
+  "sexes": {
+    "male":   {"sex": 0, "chr_model": 43, "model": "worgenmale",   "model_cap": "WorgenMale",   "folder_cap": "Male"},
+    "female": {"sex": 1, "chr_model": 44, "model": "worgenfemale", "model_cap": "WorgenFemale", "folder_cap": "Female"}
+  },
+
+  "geosets": {
+    "_comment": "groups kept as-is; facial hair +1 so 'none' is value 1; explicit renames below; everything else dropped",
+    "keep_groups": [0, 2, 4, 5, 8, 9, 10, 11, 12, 13, 15, 18],
+    "shift": {"1": 1},
+    "map": {
+      "1701": [1703],
+      "2201": [0],
+      "3202": [0],
+      "3301": [0]
+    }
+  },
+  "texture_types": {"19": 6},
+
+  "choice_filter": {
+    "_comment": "Order: normal fur colours, then DK-only, then the 'Transmog' special (retail requirement type 4) as NPC-only (flag 8). The 3.3.5a character screen steps through indices 0..(number selectable - 1) without skipping, so selectable colours must come first.",
+    "npc_req_types": [4],
+    "dk_last": true,
+    "npc_last": true
+  },
+
+  "slots": {
+    "skin":       {"option": "Fur Color", "base": 1, "extra": 2, "underwear": [13, 14]},
+    "face":       {"option": "Face", "target": 5},
+    "hair_style": {"option": "Hair Style"},
+    "hair_color": {"mode": "eyes", "option": "Eye Color", "eye_target": 25,
+                   "paint_option": "Eyesight", "paint_target": 36},
+    "facial": {"options": [
+      {"option": "Facial Hair", "geoset_type": 1, "group": 1, "shift": 1, "label": "{}"},
+      {"option": "Ears",        "geoset_type": 2, "group": 2, "label": "{} Ears"}
+    ]}
+  },
+
+  "eye_glow": {
+    "geoset": 3301,
+    "texture_type": 19,
+    "surface": 0.85,
+    "halo": 0.55,
+    "choices": [7042, 7043, 7044, 7045, 7046, 7047, 7048, 7052,
+                7073, 7074, 7075, 7076, 7077, 7078, 7079, 7083]
+  },
+
+  "hardcoded_names": {
+    "3548967": "Character\\Worgen\\Male\\HD\\WorgenMale_DKEyeGlow.blp",
+    "3548974": "Character\\Worgen\\Female\\HD\\WorgenFemale_DKEyeGlow.blp"
+  }
+}

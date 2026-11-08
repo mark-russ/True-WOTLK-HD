@@ -1,0 +1,212 @@
+{
+  "name": "nightelf",
+  "draft": true,
+  "_comment": "Stock race 4 (ChrModel 7/8). Retail has DK-only faces (12 male, 9 female). Dropped: tattoos, markings, vines, horns, blindfolds, scars, headdress. Retail texture types 9 (body layer) and 10 (vine colour) have no 3.3.5a slot: their batches are dropped. Female facial = earrings x nose ring x necklace.",
+  "race_id": 4,
+  "export_folder": "character/nightelf",
+  "out_folder": "Character\\NightElf",
+  "race_cap": "NightElf",
+  "disk_folders": {
+    "Character\\NightElf\\Male": "Character/NightElf/Male",
+    "Character\\NightElf\\Female": "Character/NightElf/Female"
+  },
+  "sexes": {
+    "male": {
+      "sex": 0,
+      "chr_model": 7,
+      "model": "nightelfmale_hd",
+      "out_model": "nightelfmale",
+      "model_cap": "NightElfMale",
+      "folder_cap": "Male",
+      "slots": {
+        "facial": {
+          "none_label": "Clean shaven",
+          "options": [
+            {
+              "option": "Beard",
+              "geoset_type": 1,
+              "group": 1,
+              "shift": 1,
+              "label": "{} beard",
+              "omit_label": "None"
+            },
+            {
+              "option": "Mustache",
+              "geoset_type": 3,
+              "group": 3,
+              "shift": 1,
+              "label": "{} mustache",
+              "omit_label": "None"
+            },
+            {
+              "option": "Sideburns",
+              "geoset_type": 2,
+              "group": 2,
+              "shift": 1,
+              "label": "{} sideburns",
+              "omit_label": "None"
+            }
+          ]
+        }
+      }
+    },
+    "female": {
+      "sex": 1,
+      "chr_model": 8,
+      "model": "nightelffemale_hd",
+      "out_model": "nightelffemale",
+      "model_cap": "NightElfFemale",
+      "folder_cap": "Female",
+      "slots": {
+        "facial": {
+          "none_label": "None",
+          "options": [
+            {
+              "option": "Earrings",
+              "geoset_type": 35,
+              "group": 1,
+              "shift": 1,
+              "label": "{} earrings",
+              "omit_label": "None"
+            },
+            {
+              "option": "Nose Ring",
+              "geoset_type": 16,
+              "group": 2,
+              "shift": 1,
+              "label": "{} nose ring",
+              "omit_label": "None"
+            },
+            {
+              "option": "Necklace",
+              "geoset_type": 36,
+              "group": 3,
+              "shift": 1,
+              "label": "{} necklace",
+              "omit_label": "None"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "choice_filter": {
+    "_comment": "Order: normal, then DK-only, then NPC-only (flag 8). Requirement type 2 = NPC-only; type 4 = 'Transmog' specials, dropped.",
+    "npc_req_types": [
+      2
+    ],
+    "drop_req_types": [
+      4
+    ],
+    "dk_last": true,
+    "npc_last": true
+  },
+  "geosets": {
+    "_comment": "From inspections/nightelf.txt. Head 3202 on and 3201 (neck stub) off, upper chest 2201, eyes 3301 and 5101 always on, DK eye glow 1701 -> 1703: no option drives these groups, same as worgen (verified in-game). Bare feet 2001 always on (copies inside the boot geosets vanished under robes, which hide group 5; full-foot boots 505 may show toes through); toe pieces 2002-2008 dropped. Eyebrows fixed to Long (3401). Ears: 3.3.5a shows 702, so the retail first choice Thin (701) is moved there and Short (702) dropped. Hands 2301 always on. Unknown single mesh 1902 (no option drives it) dropped: check a render. Vines 39xx dropped.",
+    "keep_groups": [
+      0,
+      4,
+      5,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      15,
+      18
+    ],
+    "shift": {
+      "1": 1,
+      "2": 1,
+      "3": 1
+    },
+    "map": {
+      "2301": [
+        0
+      ],
+      "1701": [
+        1703
+      ],
+      "2201": [
+        0
+      ],
+      "3202": [
+        0
+      ],
+      "3301": [
+        0
+      ],
+      "5101": [
+        0
+      ],
+      "2001": [
+        0
+      ],
+      "3401": [
+        0
+      ],
+      "701": [
+        702
+      ],
+      "702": []
+    },
+    "remap_groups": {
+      "35": 1,
+      "16": 2,
+      "36": 3
+    }
+  },
+  "bald": {
+    "geoset": 0,
+    "showscalp": 1
+  },
+  "texture_types": {
+    "6": 6
+  },
+  "fixed_textures": {
+    "19": {
+      "option": "Eye Color",
+      "choice": 0,
+      "target": 25,
+      "name": "Eyes"
+    }
+  },
+  "drop_texture_types": [
+    9,
+    10
+  ],
+  "slots": {
+    "skin": {
+      "option": "Skin Color",
+      "base": 1,
+      "underwear": [
+        13,
+        14
+      ]
+    },
+    "face": {
+      "option": "Face",
+      "target": 5
+    },
+    "hair_style": {
+      "option": "Hair Style"
+    },
+    "hair_color": {
+      "mode": "hair",
+      "option": "Hair Color",
+      "hair_target": 10,
+      "scalp_targets": [
+        11,
+        12
+      ]
+    },
+    "facial": {
+      "options": []
+    }
+  },
+  "hair_geoset_remap": {
+    "1": 99
+  }
+}
